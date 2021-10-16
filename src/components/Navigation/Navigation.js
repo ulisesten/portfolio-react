@@ -23,23 +23,35 @@ export class Navigation extends Component {
     return (
       <header>
         <this.MenuToggle />
-        <h1>Code.DEV</h1>
-        <this.Container />
+        <div className="header-container">
+          <h1 className="header-title">Code.DEV</h1>
+          <this.SearchPanel/>
+          <this.NavContainer />
+        </div>
+        <div className="space1"></div>
       </header>
     );
   }
 
   MenuToggle = () => {
     return this.state.sideBarActive ? (
-      <MenuOpen className="menu" onClick={this.onClickMenuButton} />
+      <MenuOpen className="menu-btn" onClick={this.onClickMenuButton} />
     ) : (
-      <Menu className="menu" onClick={this.onClickMenuButton} />
+      <Menu className="menu-btn" onClick={this.onClickMenuButton} />
     );
   };
 
-  Container = () => {
+  SearchPanel = () => {
     return (
-      <div className="header-container">
+      <div className="search-bar-panel">
+        <input type="text" placeholder="Code.DEV search..." className="search-input"></input>
+      </div>
+    )
+  }
+
+  NavContainer = () => {
+    return (
+      
         <nav className="navigation">
           <ul>
             <li>
@@ -59,7 +71,7 @@ export class Navigation extends Component {
             </li>
           </ul>
         </nav>
-      </div>
+      
     );
   };
 

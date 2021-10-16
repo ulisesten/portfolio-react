@@ -1,0 +1,56 @@
+.publications-container {
+    position: relative;
+    top: 50px;
+}
+
+.publications-container .publication {
+    position: relative;
+    left: 20%;
+    width: 450px;
+    height: auto;
+    margin: 10px;
+    border-radius: 8px;
+    color: blanchedalmond;
+    background-color: #1d1c1c;
+    font-family: 'Nunito', sans-serif;
+    border: 1px solid none;
+}
+
+.publications-container .publication .publication-header {
+    position: relative;
+    display: flex;
+    top: 0px;
+    margin: 10px 0;
+}
+
+.publications-container .publication .publication-header .name {
+    margin-left: 10px;
+}
+
+.publications-container .publication .publication-header .settings {
+    margin-right: 10px;
+    margin-left: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 1em;
+    cursor: pointer;
+    color: rgb(114, 114, 114);
+}
+
+.publication .body {
+    background-color: rgb(15, 15, 15);
+    padding: 5px;
+    border-radius: 8px;
+    border: 1px solid rgb(58, 58, 58);
+}
+
+.publication .panel {
+    display: flex;
+    padding: 8px;
+}
+
+.publication .panel .social-button1 {
+    background-color: transparent;
+    color: rgb(61, 135, 245);
+    margin: auto;
+}
