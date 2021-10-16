@@ -6,7 +6,7 @@
 .publications-container .publication {
     position: relative;
     left: 20%;
-    width: 450px;
+    width: 32%;
     height: auto;
     margin: 10px;
     border-radius: 8px;
@@ -53,4 +53,12 @@
     background-color: transparent;
     color: rgb(61, 135, 245);
     margin: auto;
+}
+
+@media only screen and (max-width: 768px) {
+    .publications-container .publication {
+      width: 100%;
+      left: 0px;
+      margin-left: 0;
+    }
 }
