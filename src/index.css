@@ -12,3 +12,41 @@
 body {
   background-color: black;
 }
+
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+.place-0  {left: 0;}
+.place-1  {left: 8.33%;}
+.place-2  {left: 16.66%;}
+.place-3  {left: 25%;}
+.place-4  {left: 33.33%;}
+.place-5  {left: 41.66%;}
+.place-6  {left: 50%;}
+.place-7  {left: 58.33%;}
+.place-8  {left: 66.66%;}
+.place-9  {left: 75%;}
+.place-10 {left: 83.33%;}
+.place-11 {left: 91.66%;}
+
+/***/
+@media only screen and (max-width: 768px) {
+    [class*="col-"] {
+        width: 100%;
+    }
+
+    [class*="place-"] {
+        left: 0;
+        
+    }
+}

@@ -13,7 +13,7 @@ export class Publication extends Component {
     render() {
         return (
             <section className="publications-container">
-                <div className="publication">
+                <div className="publication col-4 place-3">
                     <div className="publication-header"><h2 className="name">Ulises</h2><Settings className="settings"/></div>
                     <p className="body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
                        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
@@ -27,7 +27,7 @@ export class Publication extends Component {
                     </div>
                 </div>
 
-                <div className="publication">
+                <div className="publication col-4 place-3">
                     <div className="publication-header"><h2 className="name">Ulises</h2><Settings className="settings"/></div>
                     <p className="body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
                        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
