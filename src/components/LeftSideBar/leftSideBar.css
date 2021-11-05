@@ -1,0 +1,20 @@
+
+.sidebar-container {
+    position: fixed;
+    top: 48px;
+}
+
+.sidebar {
+    background-color: #1d1c1c;
+    margin: 8px 8px 8px 0;
+    padding: 8px;
+    color: white;
+    border-radius: 8px;
+    font-family: 'Nunito', sans-serif;
+}
+
+.sidebar .list-element {
+    padding: 4px;
+    color: white;
+
+}

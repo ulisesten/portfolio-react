@@ -1,0 +1,28 @@
+.post-creator {
+    position: relative;
+    color: white;
+    margin: 8px 0;
+    padding: 8px;
+    border-radius: 8px;
+    background-color: rgb(15, 15, 15);
+    font-family: Nunito;
+}
+
+.post-creator .post-creator-container {
+    display: flex;
+    border: solid 1px #292828;
+    border-radius: 16px;
+}
+
+.post-creator-container .profile-thumbnail {
+    width: 30px;
+    height: 30px;
+    margin: 12px;
+}
+
+.post-creator-container .input-shape {
+    background-color: transparent;
+    padding: 16px 8px;
+    width: 90%;
+    
+}

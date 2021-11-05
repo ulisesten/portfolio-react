@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import Settings from "@material-ui/icons/Settings";
+import PostCreator from "../PostCreator/PostCreator";
 
 
 export class Publication extends Component {
@@ -13,6 +14,7 @@ export class Publication extends Component {
     render() {
         return (
             <section className="publications-container">
+                <PostCreator />
                 <div className="publication col-4 place-3">
                     <div className="publication-header"><h2 className="name">Ulises</h2><Settings className="settings"/></div>
                     <p className="body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
