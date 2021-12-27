@@ -11,7 +11,7 @@ export default class PostCreator extends Component {
     }
 
     componentDidMount() {
-        this.populateClientData();
+        //this.populateClientData();
       }
     
 
