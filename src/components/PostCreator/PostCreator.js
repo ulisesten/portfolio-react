@@ -27,7 +27,7 @@ export default class PostCreator extends Component {
     }
 
     async populateClientData() {
-        const isLocalhost = Boolean(
+        /*const isLocalhost = Boolean(
             window.location.hostname === 'localhost' ||
             // [::1] is the IPv6 localhost address.
             window.location.hostname === '[::1]' ||
@@ -35,8 +35,9 @@ export default class PostCreator extends Component {
             window.location.hostname.match(
               /^127(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$/
             )
-          );
-        let server_url = (isLocalhost)? "http://localhost:8081/api/publications" : "https://the-code-api.herokuapp.com/api/publications";
+          );*/
+        //let server_url = (isLocalhost)? "http://localhost:8081/api/publications" : "https://the-code-api.herokuapp.com/api/publications";
+        let server_url = "https://the-code-api.herokuapp.com/api/publications";
         const response = await fetch(server_url);
         const data = await response.json();
         //this.setState({ clientes: data, loading: false });
