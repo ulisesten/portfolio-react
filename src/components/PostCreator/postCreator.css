@@ -18,11 +18,12 @@
     width: 30px;
     height: 30px;
     margin: 12px;
+    cursor: pointer;
 }
 
 .post-creator-container .input-shape {
     background-color: transparent;
     padding: 16px 8px;
     width: 90%;
-    
+    cursor: pointer;
 }

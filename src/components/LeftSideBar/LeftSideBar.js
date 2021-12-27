@@ -1,3 +1,4 @@
+import { Language } from "@material-ui/icons";
 import React, { Component } from "react";
 import { languages } from "../../data/lang";
 
@@ -6,12 +7,11 @@ export default class LeftSideBar extends Component {
         super(props)
 
         this.state = {
-            languages: []
+            languages: [],
         }
 
     }
 
-    
 
     render() {
         let langs = languages()
@@ -20,11 +20,11 @@ export default class LeftSideBar extends Component {
             <div className="sidebar-container place-0 col-3">
                 <div className="sidebar">
                     {langs.map((lang) => (
-                        <div className="list-element">{lang.lang}</div>
+                        <div key={lang.id} className="list-element">{lang.lang}</div>
                     ))}
                 </div>
             </div>
-        )
+        );
     }
 
 }

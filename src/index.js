@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState} from "react";
 import ReactDom from "react-dom";
 import { Navigation } from "./components/Navigation/Navigation";
 import { Publication } from "./components/Publication/Publication";
@@ -11,11 +11,14 @@ import "./components/LeftSideBar/leftSideBar.css"
 import "./components/PostCreator/postCreator.css"
 
 function Main() {
+
+  const [leftBarVisibility, setLeftBarVisibility] = useState(true);
+
   return (
       <div className="container">
-        <Navigation/>
+        <Navigation rootSideBar={setLeftBarVisibility} />
         <Publication/>
-        <LeftSideBar/>
+        { (leftBarVisibility)? <LeftSideBar/> : <></>}
         <Footer/>
       </div>
   )
