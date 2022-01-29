@@ -12,7 +12,7 @@ import "./components/PostCreator/postCreator.css"
 
 function Main() {
 
-  const [leftBarVisibility, setLeftBarVisibility] = useState(true);
+  const [leftBarVisibility, setLeftBarVisibility] = useState(false);
 
   return (
       <div className="container">

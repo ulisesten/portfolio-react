@@ -77,7 +77,7 @@ export class Navigation extends Component {
 
   onClickMenuButton = () => {
     this.setState({ sideBarActive: !this.state.sideBarActive });
-    this.props.rootSideBar(this.state.sideBarActive);
+    this.props.rootSideBar(!this.state.sideBarActive);
   };
 
   toggleNavbar() {
