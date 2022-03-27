@@ -16,5 +16,9 @@
 .sidebar .list-element {
     padding: 4px;
     color: white;
+    cursor: pointer;
+}
 
+.sidebar .list-element:hover {
+    color: rgb(61, 135, 245);
 }
