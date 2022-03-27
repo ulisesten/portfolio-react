@@ -14,7 +14,7 @@ import "./components/LeftSideBar/leftSideBar.css";
 import "./components/PostCreator/postCreator.css";
 import "./components/CourseContent/courseContent.css";
 
-const showLeftBar = isMobile ? false : true;
+let showLeftBar = isMobile ? false : true;
 
 function Home() {
   
