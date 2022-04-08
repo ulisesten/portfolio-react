@@ -1,0 +1,24 @@
+.syllabus-container {
+    position: fixed;
+    top: 48px;
+    height: 100%;
+}
+
+.syllabus {
+    background-color: #1d1c1c;
+    margin: 8px 8px 8px 0;
+    padding: 8px;
+    color: white;
+    border-radius: 8px;
+    font-family: 'Nunito', sans-serif;
+}
+
+.syllabus .list-element {
+    padding: 4px;
+    color: white;
+    cursor: pointer;
+}
+
+.syllabus .list-element:hover {
+    color: rgb(61, 135, 245);
+}

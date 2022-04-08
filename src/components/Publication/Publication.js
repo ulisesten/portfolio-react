@@ -15,7 +15,7 @@ export class Publication extends Component {
         return (
             <section className="publications-container">
                 <PostCreator />
-                <div className="publication col-4 place-3">
+                <div className="publication col-4 place-2">
                     <div className="publication-header"><h2 className="name">Name</h2><Settings className="settings"/></div>
                     <p className="body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
                        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
@@ -29,7 +29,7 @@ export class Publication extends Component {
                     </div>
                 </div>
 
-                <div className="publication col-4 place-3">
+                <div className="publication col-4 place-2">
                     <div className="publication-header"><h2 className="name">Name</h2><Settings className="settings"/></div>
                     <p className="body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
                        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip

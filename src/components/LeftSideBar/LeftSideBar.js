@@ -11,8 +11,6 @@ export default class LeftSideBar extends Component {
             loading: true,
         }
 
-        this.props = props;
-
     }
 
     componentDidMount() {
@@ -20,12 +18,16 @@ export default class LeftSideBar extends Component {
     }
 
     async populateLanguageData() {
-        const url = "http://localhost:8081/api/courses";
+        const url = "https://the-code-api.herokuapp.com/api/courses";
         const response = await fetch(url);
         const data = await response.json();
         this.setState({ languages: data, loading: false });
-      }
+    }
 
+    onClickLangage = (e) =>{
+        let obj = {id: e.target.id, name: e.target.innerText}
+        this.props.setRootSyllabusState(obj);  
+    }
 
     render() {
         let langs = this.state.languages;
@@ -36,14 +38,19 @@ export default class LeftSideBar extends Component {
 
         ) : (
 
-            <div className="sidebar">{langs.map((lang) => (
-                <div key={lang.id} className="list-element">{lang.name}</div>
-            ))}</div>
+            <div className="sidebar">
+                <h4>Lenguajes</h4>
+                {langs.map(
+                    (lang) => (
+                        <div key={lang.publicID} id={lang.publicID} onClick={this.onClickLangage} className="list-element">{lang.name}</div>
+                    )
+                )}
+            </div>
 
         )
         
         return (
-            <div className="sidebar-container place-0 col-3">
+            <div className="sidebar-container place-0 col-2">
                 {this.props.visibility? (sidebarContent) : (<></>)}
             </div>
         );
