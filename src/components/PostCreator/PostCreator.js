@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import "./postCreator.css";
+
 
 export default class PostCreator extends Component {
     constructor(props){
@@ -12,18 +14,35 @@ export default class PostCreator extends Component {
 
     componentDidMount() {
         //this.populateClientData();
-      }
+    }
+
+    onClickPostCreator = ()=>{
+        this.setState({creating: true});
+    }
+
+    onClockClose = ()=>{
+        this.setState({creating: false});
+    }
     
 
     render() {
-        return (
-            <div className="post-creator col-4 place-2">
-                <div className="post-creator-container">
-                    <img className="profile-thumbnail" src="https://res.cloudinary.com/djlzeapiz/image/upload/c_thumb,w_200,g_face/v1635894309/code.dev/icons/user_profile.png" alt="image profile"/>
-                    <div className="input-shape">Escribe algo...</div>
-                </div>
-            </div>
-        )
+
+        let normal = (  <div className="post-creator col-4 place-2">
+                            <div className="post-creator-container">
+                                <img className="profile-thumbnail" src="https://res.cloudinary.com/djlzeapiz/image/upload/c_thumb,w_200,g_face/v1635894309/code.dev/icons/user_profile.png" alt="image profile"/>
+                                <div className="input-shape" onClick={this.onClickPostCreator}>Escribe algo...</div>
+                            </div>
+                        </div>)
+
+        return this.state.creating? (
+                    <div className="post-creator col-4 place-2">
+                        <div className="post-creator-container">
+                            creando post <span className='btn_close' onClick={this.onClockClose}>X</span>
+                        </div>
+                    </div>
+            ) : (
+                normal
+            )
     }
 
     async populateClientData() {

@@ -33,7 +33,7 @@ export default class CoursesList extends Component {
 
         return (
             <div>
-                <h4>Lenguajes</h4>
+                <h4><span className="list-header">Cursos</span></h4>
                 {langs.map(
                     (lang) => (
                         <div key={lang.publicID} id={lang.publicID} onClick={this.onClickCourse} className="list-element">{lang.name}</div>

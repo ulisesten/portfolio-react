@@ -27,3 +27,8 @@
     width: 90%;
     cursor: pointer;
 }
+
+.btn_close {
+    padding: 0 8px;
+    cursor: pointer;
+}

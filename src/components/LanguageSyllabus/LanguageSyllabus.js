@@ -1,5 +1,5 @@
-import { TrendingUpTwoTone } from "@material-ui/icons";
 import React, { Component } from "react";
+import "./languageSyllabus.css";
 
 export default class LanguageSyllabus extends Component {
     constructor(props){

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import style from 'react-syntax-highlighter/dist/esm/styles/hljs/atelier-seaside-dark';
 import { course_content } from '../../data/urls';
+import "./courseContent.css";
 
 /**themes:
  * atelier-estuary-dark
@@ -56,7 +57,7 @@ export default class CourseContent extends Component {
         ) : (<>No code example</>);
 
         let renderContent = content? (this.state.loading? (<div className='course-content col-5 place-7'>Cargando...</div>) : (
-            <div className='course-content-container col-4 place-6'>
+            <div className='course-content-container col-6 place-6'>
                 <div className='course-content'>
                     <h2>{content.title}</h2>
                     <div>{content.intro}</div>
