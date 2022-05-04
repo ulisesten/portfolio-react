@@ -78,7 +78,9 @@ header .space1 {
 }
 
 .header-container .navigation ul li a:hover {
-  border-bottom: solid 1px #fff;
+  /*border-bottom: solid 1px #fff;*/
+  transform: rotate(360deg);
+  transition: 1s;
 }
 
 @media only screen and (max-width: 768px) {

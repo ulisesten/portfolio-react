@@ -16,7 +16,7 @@ let showLeftBar = isMobile ? false : true;
 function Home() {
   
   const [leftBarVisibility, setLeftBarVisibility] = useState(showLeftBar);
-  const [languageSyllabusState, setLanguageSyllabusState] = useState(null);
+  //const [languageSyllabusState, setLanguageSyllabusState] = useState(null);
   const [topicState, setTopicState] = useState(null);
 
   return (
@@ -25,9 +25,9 @@ function Home() {
         <Navigation rootSideBar={leftBarVisibility} setRootSideBar={setLeftBarVisibility} />
         <Publication/>
         <LeftSideBarV2 visibility={leftBarVisibility} setRootTopicState={setTopicState}/>
-        {
-        //<CourseContent rootTopicState={topicState} setRootTopicState={setTopicState}/> 
-      }
+        
+        <CourseContent rootTopicState={topicState} setRootTopicState={setTopicState}/> 
+        
         <Footer/>
       </div>
       </React.StrictMode>
