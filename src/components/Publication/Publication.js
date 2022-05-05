@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import Settings from "@material-ui/icons/Settings";
 import PostCreator from "../PostCreator/PostCreator";
-
+import "./publication.css";
 
 export class Publication extends Component {
     static displayName = Publication.name;

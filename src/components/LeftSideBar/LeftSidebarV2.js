@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import CoursesList from "./CoursesList/CoursesList";
 import CourseSyllabus from "./CourseSyllabus/CourseSyllabus";
+import "./leftSideBar.css";
+
 
 export default class LeftSideBarV2 extends Component {
     constructor(props){
@@ -51,13 +53,13 @@ export default class LeftSideBarV2 extends Component {
                 <CoursesList setCourseSyllabusInfo={this.setCourseInfo}/>
             );
         
-        return (
+        return this.props.visibility? (
             <div className="sidebar-container place-0 col-2">
                 <div className="sidebar">
                     {contentToShow}
                 </div>
             </div>
-        );
+        ) : (<></>);
     }
 
     

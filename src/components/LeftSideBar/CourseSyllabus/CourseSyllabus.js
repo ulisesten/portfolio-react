@@ -35,7 +35,7 @@ export default class CourseSyllabus extends Component {
     render(){
         return (
             <div>
-                <h3>
+                <h4>
                     <span
                         className="list-header"
                         onClick={this.onClickBack}>
@@ -44,7 +44,7 @@ export default class CourseSyllabus extends Component {
                     <span>
                         / {this.props.syllabusInfo.name}
                     </span>
-                </h3>
+                </h4>
                 {this.state.content.map( el => (
                     <div key={el.id} id={el.id} className="list-element" onClick={this.onClickTopic}>{el.title}</div>
                 ))
