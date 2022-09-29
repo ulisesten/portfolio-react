@@ -24,11 +24,27 @@
 .post-creator-container .input-shape {
     background-color: transparent;
     padding: 16px 8px;
-    width: 90%;
+    width: 100%;
+    outline: none;
+    color: bisque;
+}
+
+.button {
+    background-color: #275efe;
+    color: #ffffff;
+    border-radius: 6px;
+    padding: 8px;
+    margin-top: 8px;
+    width: 100%;
     cursor: pointer;
 }
 
 .btn_close {
     padding: 0 8px;
     cursor: pointer;
+}
+
+.fluid {
+    display: flex;
+    justify-content: center;
 }

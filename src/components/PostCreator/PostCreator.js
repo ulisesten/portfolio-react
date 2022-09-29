@@ -1,5 +1,10 @@
 import React, {Component} from 'react';
+import { ReactNotifications } from 'react-notifications-component';
+import { Store } from 'react-notifications-component';
+
 import "./postCreator.css";
+import 'react-notifications-component/dist/theme.css'
+import Close from '@mui/icons-material/Close'
 
 
 export default class PostCreator extends Component {
@@ -7,7 +12,8 @@ export default class PostCreator extends Component {
         super(props)
 
         this.state = {
-            creating: false
+            creating: false,
+            postContent: ""
         }
 
     }
@@ -20,8 +26,27 @@ export default class PostCreator extends Component {
         this.setState({creating: true});
     }
 
-    onClockClose = ()=>{
+    onClickClose = ()=>{
         this.setState({creating: false});
+    }
+
+    onClickCreatePost = () => {
+        if(this.state.postContent === ""){
+            Store.addNotification({
+                title: "Oops!",
+                message: "Debes escribir algo",
+                type: "warning",
+                insert: "top",
+                container: "top-right",
+                animationIn: ["animate__animated", "animate__fadeIn"],
+                animationOut: ["animate__animated", "animate__fadeOut"],
+                dismiss: {
+                  duration: 1000,
+                  onScreen: true
+                }
+              });
+        }
+
     }
     
 
@@ -35,31 +60,36 @@ export default class PostCreator extends Component {
                         </div>)
 
         return this.state.creating? (
+                    <>
+                    <ReactNotifications />
                     <div className="post-creator col-4 place-2">
+                        <div className='fluid'>
+                            <h3>Creando post</h3> <Close className='icon' onClick={this.onClickClose}/>
+                        </div>
                         <div className="post-creator-container">
-                            creando post <span className='btn_close' onClick={this.onClockClose}>X</span>
+                        <div>
+                            <img className="profile-thumbnail" src="https://res.cloudinary.com/djlzeapiz/image/upload/c_thumb,w_200,g_face/v1635894309/code.dev/icons/user_profile.png" alt="image profile"/>
+                        </div>
+                            <textarea placeholder='Escribe algo...' className='input-shape'></textarea>
+                        </div>
+                        <div>
+                            <button className='button' onClick={this.onClickCreatePost}>Crear</button>
                         </div>
                     </div>
+                    </>
             ) : (
                 normal
             )
     }
 
     async populateClientData() {
-        /*const isLocalhost = Boolean(
-            window.location.hostname === 'localhost' ||
-            // [::1] is the IPv6 localhost address.
-            window.location.hostname === '[::1]' ||
-            // 127.0.0.1/8 is considered localhost for IPv4.
-            window.location.hostname.match(
-              /^127(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$/
-            )
-          );*/
-        //let server_url = (isLocalhost)? "http://localhost:8081/api/publications" : "https://the-code-api.herokuapp.com/api/publications";
+        
         let server_url = "https://the-code-api.herokuapp.com/api/publications";
         const response = await fetch(server_url);
         const data = await response.json();
+
         //this.setState({ clientes: data, loading: false });
         console.log(data);
+        
       }
 }

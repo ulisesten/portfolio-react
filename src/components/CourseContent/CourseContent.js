@@ -2,7 +2,12 @@ import React, { Component } from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import style from 'react-syntax-highlighter/dist/esm/styles/hljs/atelier-seaside-dark';
 import { course_content } from '../../data/urls';
+import ContentPresenter from '../../Utils/ContentPresenter';
 import "./courseContent.css";
+
+/** Icons */
+import Public from '@mui/icons-material/Public';
+import Download from '@mui/icons-material/Download'
 
 /**themes:
  * atelier-estuary-dark
@@ -36,7 +41,7 @@ export default class CourseContent extends Component {
         const url = course_content + (this.props.rootTopicState? this.props.rootTopicState.id : "c01_topic01");
         const response = await fetch(url);
         const data = await response.json();
-        this.setState({ content: data, loading: false, code: true });
+        this.setState({ content: data.result, loading: false, code: true });
         this.props.setRootTopicState(null);
     }
 
@@ -45,25 +50,21 @@ export default class CourseContent extends Component {
 
         let content = this.state.content? this.state.content : null;
 
-        let handleCode = this.state.code? (
-           
-            <SyntaxHighlighter style={style} language="c" showLineNumbers={true}>
-                { content? `${this.state.content.code.replace(/\\\\\\\\n/g, "${1}")
-                                                     .replace(/\\n/g,'\n')
-                                                     .replace(/\\\"/g, '\"')
-                                                     .replace(/\$\{1\}/g,'\\n')}`: "" }
-            </SyntaxHighlighter>
-            
-        ) : (<>No code example</>);
-
         let renderContent = content? (this.state.loading? (<div className='course-content col-5 place-7'>Cargando...</div>) : (
             <div className='course-content-container col-6 place-6'>
                 <div className='course-content'>
-                    <h2>{content.title}</h2>
-                    <div>{content.intro}</div>
-                        {handleCode}
-                    <div>{content.conclusion}</div>
+                    <h1>{content.title}</h1>
+                    <div>
+                    {(new ContentPresenter(content.content)).presentContent().map((el, index) => (
+                        <div key={index}>{el.type == "text"? (<p>{el.content}</p>) : (<SyntaxHighlighter style={style} language="c" showLineNumbers={true}>{el.content}</SyntaxHighlighter>)}</div>
+                    ))}
+                    </div>
+                    <div className="course-content-toolbar">
+                        <Public className="icon" />
+                        <Download className="icon" />
+                    </div>
                 </div>
+                
             </div>)) : (<></>);
         
 

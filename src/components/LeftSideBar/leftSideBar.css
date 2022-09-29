@@ -5,8 +5,6 @@
 }
 
 .sidebar {
-    /*background-color: #1d1c1c;*/
-    /*background-color: rgb(15, 15, 15);*/
     margin: 8px 8px 8px 0;
     padding: 8px;
     color: white;
@@ -15,12 +13,38 @@
 }
 
 .sidebar .list-header {
+    background-color: #2b2a2a;
     padding: 8px;
+    border-radius: 16px;
     cursor: pointer;
 }
 
+.sidebar .syllabus-header {
+    background-color: #2b2a2a;
+    padding: 8px;
+    border-radius: 0 16px 16px 0;
+    border-left: 1px solid #646363;
+}
 
-.sidebar .list-element {
+.sidebar .syllabus-header-start {
+    background-color: #2b2a2a;
+    border-radius: 16px 0 0 16px;
+    padding: 8px;
+    width: 16px;
+    height: auto;
+    cursor: pointer;
+}
+
+.sidebar .syllabus-header-start:hover {
+    background-color: #2c3042;
+}
+
+.list-container {
+    margin-top: 20px;
+    margin-bottom: 16px;
+}
+
+.list-container .list-element {
     color: white;
     /*background-color: #1d1c1c;*/
     border-radius: 8px;
@@ -28,13 +52,12 @@
     margin: 4px;
     cursor: pointer;
 }
-
-.sidebar .list-element:hover {
+.list-container .list-element:hover {
     color: rgb(61, 135, 245);
     background-color: #0c0c0c;
     transition: 0.2s 0.1;
 }
 
-.sidebar .list-element-icon {
+.list-container .list-element-icon {
     margin: 4px 4px 0 0;
 }

@@ -18,10 +18,13 @@ export default class CoursesList extends Component {
     }
 
     async populateLanguageData() {
+        this.setState({ loading: true });
+
         const url = courses_list;
         const response = await fetch(url);
         const data = await response.json();
-        this.setState({ languages: data, loading: false });
+
+        this.setState({ languages: data.result, loading: false });
     }
 
     onClickCourse = (e)=>{
@@ -38,22 +41,38 @@ export default class CoursesList extends Component {
     }
 
     render(){
-        let langs = this.state.languages;
 
         return (
             <div>
                 <h4><span className="list-header">Cursos</span></h4>
-                {langs.map(
-                    (lang) => (
-                        <div key={lang.publicID}
-                             id={lang.publicID}
-                             onClick={this.onClickCourse}
-                             className="list-element">
-                                {this.getIcon(lang.lang)}
-                                {lang.name}
-                        </div>
-                    )
-                )}
+                {this.state.loading?<div className='list-container load-6'>
+                                        <div className="letter-holder">
+                                            <div className="l-1 letter">L</div>
+                                            <div className="l-2 letter">o</div>
+                                            <div className="l-3 letter">a</div>
+                                            <div className="l-4 letter">d</div>
+                                            <div className="l-5 letter">i</div>
+                                            <div className="l-6 letter">n</div>
+                                            <div className="l-7 letter">g</div>
+                                            <div className="l-8 letter">.</div>
+                                            <div className="l-9 letter">.</div>
+                                            <div className="l-10 letter">.</div>
+                                        </div>
+                                    </div>
+                                    : 
+                                    <div className='list-container'>
+                                        {this.state.languages.map(
+                                            (lang) => (
+                                                <div key={lang.id}
+                                                    id={lang.id}
+                                                    onClick={this.onClickCourse}
+                                                    className="list-element">
+                                                        {this.getIcon(lang.lang)}
+                                                        {lang.name}
+                                                </div>
+                                            )
+                                        )}
+                                </div>}
             </div>
         )
     }

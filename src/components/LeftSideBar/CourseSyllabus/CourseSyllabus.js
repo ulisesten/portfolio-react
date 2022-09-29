@@ -21,7 +21,7 @@ export default class CourseSyllabus extends Component {
         const response = await fetch(url);
         const data = await response.json();
         
-        this.setState({ content: data, loading: false });
+        this.setState({ content: data.result, loading: false });
     }
 
     onClickBack = ()=>{
@@ -37,18 +37,23 @@ export default class CourseSyllabus extends Component {
             <div>
                 <h4>
                     <span
-                        className="list-header"
+                        className="syllabus-header-start"
                         onClick={this.onClickBack}>
                             Cursos
                     </span>
-                    <span>
-                        / {this.props.syllabusInfo.name}
+                    <span className='syllabus-header'>
+                        {this.props.syllabusInfo.name}
+                    </span>
+                    <span className='syllabus-header-end'>
+
                     </span>
                 </h4>
-                {this.state.content.map( el => (
-                    <div key={el.id} id={el.id} className="list-element" onClick={this.onClickTopic}>{el.title}</div>
-                ))
-                }
+                <div className='list-container'>
+                    {this.state.content.map( el => (
+                            <div key={el.id} id={el.id} className="list-element" onClick={this.onClickTopic}>{el.title}</div>
+                        ))
+                    }
+                </div>
             </div>
         )
     }

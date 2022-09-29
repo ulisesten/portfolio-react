@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import Settings from "@material-ui/icons/Settings";
+import Settings from "@mui/icons-material/Settings";
 import PostCreator from "../PostCreator/PostCreator";
 import "./publication.css";
 
@@ -23,9 +23,9 @@ export class Publication extends Component {
                        eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
                        deserunt mollit anim id est laborum.</p>
                     <div className="panel">
-                       <button className="social-button1">Me gusta</button>
-                       <button className="social-button1">Comentar</button>
-                       <button className="social-button1">Compartir</button>
+                        <button className="button social-button-left">Me gusta</button>
+                        <button className="button social-button-middle">Comentar</button>
+                        <button className="button social-button-right">Compartir</button>
                     </div>
                 </div>
 
@@ -37,9 +37,9 @@ export class Publication extends Component {
                        eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
                        deserunt mollit anim id est laborum.</p>
                     <div className="panel">
-                       <button className="social-button1">Me gusta</button>
-                       <button className="social-button1">Comentar</button>
-                       <button className="social-button1">Compartir</button>
+                       <button className="button social-button-left">Me gusta</button>
+                       <button className="button social-button-middle">Comentar</button>
+                       <button className="button social-button-right">Compartir</button>
                     </div>
                 </div>
             </section>

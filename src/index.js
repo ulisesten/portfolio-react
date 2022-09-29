@@ -1,19 +1,15 @@
 import React, { useState} from "react";
 import ReactDom from "react-dom";
-import { Navigation } from "./components/Navigation/Navigation";
-import { Publication } from "./components/Publication/Publication";
-import { Footer } from "./components/Footer/Footer";
-import LeftSideBar from "./components/LeftSideBar/LeftSideBar";
-import CourseContent from "./components/CourseContent/CourseContent";
-import LanguageSyllabus from "./components/LanguageSyllabus/LanguageSyllabus";
-import LeftSideBarV2 from "./components/LeftSideBar/LeftSidebarV2";
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { isMobile } from "react-device-detect";
 
 import "./index.css";
+import Home from "./pages/Home";
+import Topic from "./pages/Topic";
 
 let showLeftBar = isMobile ? false : true;
 
-function Home() {
+function App() {
   
   const [leftBarVisibility, setLeftBarVisibility] = useState(showLeftBar);
   //const [languageSyllabusState, setLanguageSyllabusState] = useState(null);
@@ -21,18 +17,18 @@ function Home() {
 
   return (
     <React.StrictMode>
-      <div className="container">
-        <Navigation rootSideBar={leftBarVisibility} setRootSideBar={setLeftBarVisibility} />
-        <Publication/>
-        <LeftSideBarV2 visibility={leftBarVisibility} setRootTopicState={setTopicState}/>
+      <Router>
+        <Switch>
+          <Route exact path='/' component={Home }/>
+          <Route exact path='/course/:topic' component={Topic }/>
+        </Switch>
+      
+      </Router>
         
-        <CourseContent rootTopicState={topicState} setRootTopicState={setTopicState}/> 
-        
-        <Footer/>
-      </div>
-      </React.StrictMode>
+      
+    </React.StrictMode>
   )
 
 }
 
-ReactDom.render(<Home />, document.getElementById("root"));
+ReactDom.render(<App />, document.getElementById("root"));

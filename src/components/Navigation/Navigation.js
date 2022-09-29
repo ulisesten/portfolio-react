@@ -2,11 +2,11 @@ import React, { Component } from "react";
 
 
 /**icons */
-import Menu from "@material-ui/icons/Menu";
-import MenuOpen from "@material-ui/icons/MenuOpen";
-import Notifications from "@material-ui/icons/Notifications";
-import Account_circle from "@material-ui/icons/AccountCircle";
-import Exit_to_app from "@material-ui/icons/ExitToApp";
+import Menu from "@mui/icons-material/Menu";
+import MenuOpen from "@mui/icons-material/MenuOpen";
+import Notifications from "@mui/icons-material/Notifications";
+import Account_circle from "@mui/icons-material/AccountCircle";
+import Exit_to_app from "@mui/icons-material/ExitToApp";
 
 import "./navigation.css";
 

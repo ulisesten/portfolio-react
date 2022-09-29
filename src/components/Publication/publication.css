@@ -44,12 +44,31 @@
 
 .publication .panel {
     display: flex;
+    justify-content: center;
     padding: 8px;
 }
 
-.publication .panel .social-button1 {
-    background-color: transparent;
+.publication .panel .button {
+    background-color: black;
     color: rgb(61, 135, 245);
-    margin: auto;
+    margin: auto 0 auto;
+    padding: 10px 16px;
     cursor: pointer;
+}
+
+.publication .panel .button:hover {
+    background-color: #e21919;
+    color: #fff;
+}
+
+.publication .panel .social-button-left {
+    border-radius: 16px 0 0 16px;
+}
+
+.publication .panel .social-button-middle {
+    border-radius: 0;
+}
+
+.publication .panel .social-button-right {
+    border-radius: 0 16px 16px 0;
 }

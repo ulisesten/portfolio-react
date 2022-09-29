@@ -1,4 +1,4 @@
-import { Language } from "@material-ui/icons";
+import Language from "@mui/icons-material/Language";
 import React, { Component } from "react";
 import { languages } from "../../data/lang";
 
@@ -42,7 +42,7 @@ export default class LeftSideBar extends Component {
                 <h4>Lenguajes</h4>
                 {langs.map(
                     (lang) => (
-                        <div key={lang.publicID} id={lang.publicID} onClick={this.onClickLangage} className="list-element">{lang.name}</div>
+                        <div key={lang.id} id={lang.id} onClick={this.onClickLangage} className="list-element">{lang.name}</div>
                     )
                 )}
             </div>

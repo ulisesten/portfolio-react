@@ -6,9 +6,20 @@
 .course-content {
     margin: 8px 0 8px 8px;
     padding: 32px;
-    background-color:rgb(15, 15, 15);
+    background-color:#0f0f0f;
     border-radius: 8px;
-    border: 1px solid rgb(15, 15, 15);
+    border: 1px solid #0f0f0f;
     color: aliceblue;
     font-family: 'Nunito', sans-serif;
+    white-space: pre;
 }
+
+.course-content .course-content-toolbar {
+    background-color: #000;
+    border-radius: 16px;
+    padding: 8px;
+    margin-top: 8px;
+    display: flex;
+    justify-content: end;
+}
+
