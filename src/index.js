@@ -24,8 +24,6 @@ function App() {
         </Switch>
       
       </Router>
-        
-      
     </React.StrictMode>
   )
 

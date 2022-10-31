@@ -1,6 +1,6 @@
 
 .sidebar-container {
-    position: fixed;
+    position: absolute;
     top: 48px;
 }
 

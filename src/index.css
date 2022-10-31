@@ -52,6 +52,30 @@ body {
     }
 }
 
+@media only screen and (min-width: 1680px) {
+  .body-container {
+    position: relative;
+    width: 80%;
+    left: 10%;
+  }
+}
+
+@media only screen and (min-width: 2160px) {
+  .body-container {
+    position: relative;
+    width: 76%;
+    left: 12%;
+  }
+}
+
+@media only screen and (min-width: 2436px) {
+  .body-container {
+    position: relative;
+    width: 74%;
+    left: 13%;
+  }
+}
+
 /**Animations*/
 
 .load-6 .letter {

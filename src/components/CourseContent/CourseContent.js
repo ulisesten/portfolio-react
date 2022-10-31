@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import style from 'react-syntax-highlighter/dist/esm/styles/hljs/atelier-seaside-dark';
-import { course_content } from '../../data/urls';
+import { course_content_url } from '../../data/urls';
 import ContentPresenter from '../../Utils/ContentPresenter';
 import "./courseContent.css";
 
@@ -38,7 +38,7 @@ export default class CourseContent extends Component {
     }
 
     async populateContentData() {
-        const url = course_content + (this.props.rootTopicState? this.props.rootTopicState.id : "c01_topic01");
+        const url = course_content_url + (this.props.rootTopicState? this.props.rootTopicState.id : "c01_topic01");
         const response = await fetch(url);
         const data = await response.json();
         this.setState({ content: data.result, loading: false, code: true });
@@ -54,7 +54,7 @@ export default class CourseContent extends Component {
             <div className='course-content-container col-6 place-6'>
                 <div className='course-content'>
                     <h1>{content.title}</h1>
-                    <div>
+                    <div className='course-content-child'>
                     {(new ContentPresenter(content.content)).presentContent().map((el, index) => (
                         <div key={index}>{el.type == "text"? (<p>{el.content}</p>) : (<SyntaxHighlighter style={style} language="c" showLineNumbers={true}>{el.content}</SyntaxHighlighter>)}</div>
                     ))}

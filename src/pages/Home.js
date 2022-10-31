@@ -17,11 +17,15 @@ export default function Home() {
   return (
     <React.StrictMode>
       <div className="container">
+
         <Navigation rootSideBar={leftBarVisibility} setRootSideBar={setLeftBarVisibility} />
-        <Publication/>
-        <LeftSideBarV2 visibility={leftBarVisibility} setRootTopicState={setTopicState}/>
+        <div className="body-container">
+
+          <Publication/>
+          <LeftSideBarV2 visibility={leftBarVisibility} setRootTopicState={setTopicState}/>
+          <CourseContent rootTopicState={topicState} setRootTopicState={setTopicState}/> 
         
-        <CourseContent rootTopicState={topicState} setRootTopicState={setTopicState}/> 
+        </div>
         
       </div>
     </React.StrictMode>

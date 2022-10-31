@@ -1,5 +1,5 @@
 import React , {Component} from 'react';
-import { courses_list } from '../../../data/urls';
+import { courses_list_url } from '../../../data/urls';
 import {CLineIcon, CplusplusLineIcon, JavaPlainIcon}  from 'react-devicons';
 
 export default class CoursesList extends Component {
@@ -20,7 +20,7 @@ export default class CoursesList extends Component {
     async populateLanguageData() {
         this.setState({ loading: true });
 
-        const url = courses_list;
+        const url = courses_list_url;
         const response = await fetch(url);
         const data = await response.json();
 

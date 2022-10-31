@@ -1,5 +1,5 @@
 import React, { Component, useEffect } from 'react';
-import { course_syllabus } from '../../../data/urls';
+import { course_syllabus_url } from '../../../data/urls';
 
 export default class CourseSyllabus extends Component {
     constructor(props){
@@ -17,7 +17,7 @@ export default class CourseSyllabus extends Component {
     }
 
     async populateSyllabusData() {
-        const url = course_syllabus + this.props.syllabusInfo.id;
+        const url = course_syllabus_url + this.props.syllabusInfo.id;
         const response = await fetch(url);
         const data = await response.json();
         

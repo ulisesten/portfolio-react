@@ -8,7 +8,8 @@ export default class ContentPresenter {
     parseNewLine = () => {
 
         const content =  this.content.replace(/\\\\\\\\n/g, "${1}")
-            .replace(/(?:\r\n|\r|\n)/g, "\n")
+            //.replace(/(?:\r\n|\r|\n)/g, "\n")
+            .replace(/\\n/g, '\n')
             .replace(/\\\"/g, '\"')
             .replace(/\$\{1\}/g,'\\n')
 
@@ -40,8 +41,24 @@ export default class ContentPresenter {
         return textArr;
     }
 
+    parseCodeV2 = () => {
+        const textArr = [];
+        let line = this.parseNewLine().toString();
+
+        let list = line.split('$code$')
+
+        textArr.push({type: "text", content: list[0]});
+        for(let i = 1; i < list.length; i++){
+            let l = list[i].split('$-code$')
+            textArr.push({type: "code", content: l[0]});
+            textArr.push({type: "text", content: l[1]});
+        }
+
+        return textArr;
+    }
+
     presentContent = () => {
-        let content = this.parseCode();
+        let content = this.parseCodeV2();
         //console.log(content);
         return content;
 
