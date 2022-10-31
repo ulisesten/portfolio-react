@@ -16,6 +16,6 @@ WORKDIR /usr/share/nginx/html
 
 RUN rm -rf *
 
-COPY --from=builder /buld/build .
+COPY --from=builder /buld/build /fromtend/build
 
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
