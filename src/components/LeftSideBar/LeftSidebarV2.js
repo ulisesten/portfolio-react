@@ -16,23 +16,6 @@ export default class LeftSideBarV2 extends Component {
 
     }
 
-    /*componentDidMount() {
-        this.populateLanguageData();
-    }
-
-    async populateLanguageData() {
-        const url = "https://the-code-api.herokuapp.com/api/courses";
-        const response = await fetch(url);
-        const data = await response.json();
-        this.setState({ languages: data, loading: false });
-    }
-
-    onClickCourse = (e) =>{
-        //let obj = {id: e.target.id, name: e.target.innerText}
-        //this.props.setRootSyllabusState(obj);  
-        this.setState({showSyllabus: true, showCourses: false});
-    }*/
-
     setCourseInfo = (info) => {
         this.setState({course_info: info, showSyllabus: true});
     }

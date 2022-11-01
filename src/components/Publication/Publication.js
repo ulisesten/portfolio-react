@@ -32,7 +32,7 @@ export class Publication extends Component {
                         <div className="publication col-4 place-2">
                             <div className="publication-header"><h2 className="name">Nombre</h2><Settings className="settings"/></div>
                             <p className="body">
-                                Este será el contentido de la publicación.
+                                Este será el contenido de la publicación.
                                 Como función tendremos la posibilidad de hacer referencia
                                 a alguno de los ejemplos de código fuente que encontremos en
                                 los cursos. De esa forma podremos obtener ayuda de alguno de

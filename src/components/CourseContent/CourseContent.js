@@ -21,7 +21,7 @@ export default class CourseContent extends Component {
         super(props)
 
         this.state = {
-            loading: true,
+            loading: false,
             code: false,
             content: null,
         }
@@ -38,6 +38,7 @@ export default class CourseContent extends Component {
     }
 
     async populateContentData() {
+        this.setState({ loading: true });
         const url = course_content_url + (this.props.rootTopicState? this.props.rootTopicState.id : "c01_topic01");
         const response = await fetch(url);
         const data = await response.json();
@@ -50,7 +51,47 @@ export default class CourseContent extends Component {
 
         let content = this.state.content? this.state.content : null;
 
-        let renderContent = this.state.content? (this.state.loading? (<div className='course-content col-5 place-7'>Cargando...</div>) : (
+        
+        
+
+        return (
+            <div className='course-content-container col-6 place-6'>
+                <div className='course-content'>
+                    {
+                        this.state.content? (
+                            <>
+                                <h3>{content.title}</h3>
+                                    <div className='course-content-child'> {   
+                                        (new ContentPresenter(content.content))
+                                        .presentContent().map(
+                                            (el, index) => (
+                                                <div key={index}>{el.type == "text"? (<p>{el.content}</p>) : (<SyntaxHighlighter style={style} language="c" showLineNumbers={true}>{el.content}</SyntaxHighlighter>)}</div>
+                                            )
+                                        )
+                                }
+                                </div>
+
+                                <div className="course-content-toolbar">
+                                    <Public className="icon" />
+                                    <Download className="icon" />
+                                </div>
+                            </>
+                        ) : (
+                            <>
+                                <h3>¡Bienvenido!</h3>
+                                <p>Elije uno de los cursos a tu izquierda y comienza a aprender.</p>
+                            </>
+                        )
+                    }
+                </div>
+            </div>
+        );
+        
+    }
+}
+
+/*
+let renderContent = this.state.content? (this.state.loading? (<div className='course-content col-5 place-7'>Cargando...</div>) : (
             <div className='course-content-container col-6 place-6'>
                 <div className='course-content'>
                     <h3>{content.title}</h3>
@@ -65,17 +106,5 @@ export default class CourseContent extends Component {
                     </div>
                 </div>
                 
-            </div>)) : (
-                <div className='course-content-container col-6 place-6'>
-                    <div className='course-content'>
-                        <h3>¡Bienvenido!</h3>
-                        <p>Elije uno de los cursos a tu izquierda y empieza a aprender</p>
-                    </div>
-                </div>
-            );
-        
-
-        return renderContent;
-        
-    }
-}
+            </div>)) : 
+*/
