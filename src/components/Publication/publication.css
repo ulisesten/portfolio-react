@@ -1,6 +1,6 @@
 .publications-container {
-    position: relative;
-    top: 48px;
+    position: absolute;
+    top: 0px;
 }
 
 .publications-container .publication {

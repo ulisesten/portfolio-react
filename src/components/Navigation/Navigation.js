@@ -30,7 +30,7 @@ export class Navigation extends Component {
              <header>
                 <this.MenuToggle />
                 <div className="header-container">
-                    <h1 className="header-title">Code.DEV</h1>
+                    <h1 className="header-title">TheCode.DEV</h1>
                     <this.SearchPanel/>
                     <this.NavContainer />
                 </div>
@@ -50,7 +50,7 @@ export class Navigation extends Component {
     SearchPanel = () => {
         return (
             <div className="search-bar-panel">
-                <input type="text" placeholder="Code.DEV search..." className="search-input"></input>
+                <input type="text" placeholder="TheCode.DEV search..." className="search-input"></input>
             </div>
         )
     }

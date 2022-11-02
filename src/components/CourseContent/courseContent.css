@@ -1,9 +1,11 @@
 .course-content-container {
-    position: absolute;
-    top: 48px;
+    position: relative;
+    top: 0px;
+    width: 100%;
 }
 
 .course-content {
+    width: 100%;
     margin: 8px 0 8px 8px;
     padding: 32px;
     background-color:#0f0f0f;

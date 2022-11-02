@@ -12,7 +12,6 @@ let showLeftBar = isMobile ? false : true;
 function App() {
   
   const [leftBarVisibility, setLeftBarVisibility] = useState(showLeftBar);
-  //const [languageSyllabusState, setLanguageSyllabusState] = useState(null);
   const [topicState, setTopicState] = useState(null);
 
   return (
