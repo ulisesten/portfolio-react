@@ -9,7 +9,9 @@ let color = randomColor();
 const socket = socketIOClient(socketio_url);
 let prev_channel = "";
 
+
 export default function LearnersChatV2({channel}) {
+    const [ user_id, set_user_id] = useState("");
     const [ text, setText ] = useState("");
     const [ messagesList, setMessagesList ] = useState([]);
 
@@ -24,6 +26,10 @@ export default function LearnersChatV2({channel}) {
     socket.on("message", data => {
         setMessagesList([...messagesList, data])
     });
+
+    socket.on("id", data => {
+        set_user_id(data);
+    })
 
     const onChangeMessageInput = (e) => {
         setText(e.target.value);
@@ -41,15 +47,17 @@ export default function LearnersChatV2({channel}) {
     }
 
     const onClickSend = () =>{
-        const data = {
-            fromID: "s54uy54ds-df",
-            text: text,
-            idColor: color,
-            channel: channel
-        };
+        if(user_id !== "") {
+            const data = {
+                fromID: user_id,
+                text: text,
+                idColor: color,
+                channel: channel
+            };
 
-        socket.emit("message", data)
-        onIncomingMessage(data)
+            socket.emit("message", data)
+            onIncomingMessage(data)
+        }
     }
 
     return (
