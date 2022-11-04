@@ -13,11 +13,9 @@ export default class LearnersChat extends Component {
         this.state = {
             text: "",
             messagesList: [],
-            updating: true
         }
 
         this.color =  randomColor()
-
         this.socket = socketIOClient(socketio_url);
     }
 
@@ -35,15 +33,11 @@ export default class LearnersChat extends Component {
         })
     }
 
-    onIncomingMessage = (fromID, message) => {
-        let data = {fromID: fromID, text: message, idColor: this.color, channel: this.props.courseId };
-
+    onIncomingMessage = (data) => {
         this.setState ({
             messagesList: [...this.state.messagesList, data],
-            text: "",
-            updating: false
+            text: ""
         })
-
     }
 
     onEnterSendMessage = (e) =>{
@@ -53,12 +47,21 @@ export default class LearnersChat extends Component {
     }
 
     onClickSend = () =>{
-        this.setState({updating: true})
-        this.socket.emit("message", {fromID: "s54uy54ds-df", text: this.state.text, idColor: this.color, channel: this.props.courseId })
-        this.onIncomingMessage( "s54uy54ds-df", this.state.text)
+        const data = {
+            fromID: "s54uy54ds-df",
+            text: this.state.text,
+            idColor: this.color,
+            channel: this.props.channel
+        };
+
+        this.socket.emit("message", data)
+        this.onIncomingMessage(data)
     }
 
     render(){
+        if(this.props.courseId)
+            this.socket.emit("suscribe", this.props.channel)
+
         return (
             <div className='learners-chat-container col-6 place-6'>
                 <div className='learners-chat'>
@@ -81,7 +84,7 @@ export default class LearnersChat extends Component {
                             autoFocus={true}
                             placeholder="Enter your message..."/>
 
-                        <button onClick={this.onClickSend} className='button-input'>ENVIAR</button>
+                        <button onClick={this.onClickSend} className='button-input'>Enviar</button>
                     </div>
                 </div>
 
