@@ -7,6 +7,7 @@ import { isMobile } from "react-device-detect";
 
 import "../index.css";
 import LearnersChat from "../components/LearnersChat/LearnersChat";
+import CourseContentV2 from "../components/CourseContent/CourseContentV2";
 
 let showLeftBar = isMobile ? false : true;
 
@@ -14,6 +15,7 @@ export default function Home() {
   
   const [leftBarVisibility, setLeftBarVisibility] = useState(showLeftBar);
   const [topicState, setTopicState] = useState(null);
+  const [courseId, setCourseId] = useState(null);
 
   return (
     <React.StrictMode>
@@ -25,8 +27,8 @@ export default function Home() {
           <LeftSideBarV2 visibility={leftBarVisibility} setRootTopicState={setTopicState}/>
           <Publication/>
           <div className="right-section-container col-6 place-3">
-            <CourseContent rootTopicState={topicState} setRootTopicState={setTopicState}/> 
-            <LearnersChat />
+            <CourseContentV2 rootTopicState={topicState} setRootTopicState={setTopicState} setRootCourseId={setCourseId}/> 
+            <LearnersChat courseId={courseId}/>
           </div>
         </div>
         

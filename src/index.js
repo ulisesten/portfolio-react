@@ -1,5 +1,5 @@
 import React, { useState} from "react";
-import ReactDom from "react-dom";
+import * as ReactDom from "react-dom/client";
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { isMobile } from "react-device-detect";
 
@@ -28,4 +28,6 @@ function App() {
 
 }
 
-ReactDom.render(<App />, document.getElementById("root"));
+const container = document.getElementById("root");
+const root = ReactDom.createRoot(container);
+root.render(<App />);

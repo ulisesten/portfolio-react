@@ -58,8 +58,7 @@
     cursor: pointer;
 }
 .list-container .list-element:hover {
-    color: rgb(61, 135, 245);
-    background-color: #0c0c0c;
+    background-color: #1f1e1e;
     transition: 0.2s 0.1;
 }
 

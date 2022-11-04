@@ -40,9 +40,12 @@ export default class CourseContent extends Component {
     async populateContentData() {
         this.setState({ loading: true });
         const url = course_content_url + (this.props.rootTopicState? this.props.rootTopicState.id : "c01_topic01");
+        
         const response = await fetch(url);
         const data = await response.json();
+
         this.setState({ content: data.result, loading: false, code: true });
+        this.props.setRootCourseId(data.result? data.result.courseID : null)
         this.props.setRootTopicState(null);
     }
 
@@ -50,9 +53,6 @@ export default class CourseContent extends Component {
     render(){
 
         let content = this.state.content? this.state.content : null;
-
-        
-        
 
         return (
             <div className='course-content-container col-6 place-6'>

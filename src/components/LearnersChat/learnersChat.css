@@ -11,6 +11,7 @@
     margin: 0 0 8px 8px;
     border-radius: 8px;
     width: 100%;
+    font-family: 'Nunito', sans-serif;
 }
 
 .chat-header {
@@ -21,8 +22,25 @@
 }
 
 .chat-body {
-    min-height: 400px;
+    position: relative;
+    min-height: 300px;
     padding: 8px;
+}
+
+.chat-body .message {
+    color: aliceblue;
+    width: fit-content;
+    list-style: none;
+    margin: 8px;
+}
+
+.chat-body .message .from-id {
+    font-size: small;
+    display: inline-block;
+}
+
+.chat-body .message .message-text {
+    display: inline-block;
 }
 
 .chat-input {
@@ -45,10 +63,14 @@
 
 .chat-input .button-input {
     position: relative;
-    color: aquamarine;
+    color: #a1e6cf;
     background-color: transparent;
     width: 15%;
 }
+
+/*.chat-input .button-input:hover {
+    background-color: yellow;
+}*/
 
 
 @media only screen and (max-width: 768px) {
