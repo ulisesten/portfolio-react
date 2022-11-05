@@ -65,9 +65,10 @@
     position: relative;
     color: #a1e6cf;
     background-color: transparent;
-    width: 10%;
+    width: fit-content;
     float: right;
     padding: 10px;
+    outline: none;
 }
 
 /*.chat-input .button-input:hover {
