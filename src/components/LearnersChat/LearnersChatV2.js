@@ -11,7 +11,7 @@ let prev_channel = "";
 
 
 export default function LearnersChatV2({channel}) {
-    //const [ user_id, set_user_id] = useState("");
+    //const [ user_id, set_user_id] = useState(socket.id);
     const [ text, setText ] = useState("");
     const [ messagesList, setMessagesList ] = useState([]);
 
@@ -47,7 +47,7 @@ export default function LearnersChatV2({channel}) {
     }
 
     const onClickSend = () =>{
-        if(user_id !== "") {
+        //if(user_id !== "") {
             const data = {
                 fromID: socket.id,
                 text: text,
@@ -57,7 +57,7 @@ export default function LearnersChatV2({channel}) {
 
             socket.emit("message", data)
             onIncomingMessage(data)
-        }
+        //}
     }
 
     return (
