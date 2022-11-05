@@ -57,7 +57,7 @@
     color: aliceblue;
     background-color: transparent;
     outline: none;
-    padding: 12px;
+    padding: 16px;
     height: 100%;
 }
 
@@ -65,7 +65,9 @@
     position: relative;
     color: #a1e6cf;
     background-color: transparent;
-    width: 15%;
+    width: 10%;
+    float: right;
+    padding: 10px;
 }
 
 /*.chat-input .button-input:hover {

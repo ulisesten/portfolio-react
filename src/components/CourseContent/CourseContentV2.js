@@ -42,7 +42,7 @@ export default function CourseContentV2({rootTopicState, setRootTopicState, setR
                                         (new ContentPresenter(content.content))
                                         .presentContent().map(
                                             (el, index) => (
-                                                <div key={index}>{el.type == "text"? (<p>{el.content}</p>) : (<SyntaxHighlighter style={style} language="c" showLineNumbers={true}>{el.content}</SyntaxHighlighter>)}</div>
+                                                <div key={index}>{el.type == "text"? (<p className='course-text'>{el.content}</p>) : (<SyntaxHighlighter style={style} language="c" showLineNumbers={true}>{el.content}</SyntaxHighlighter>)}</div>
                                             )
                                         )
                                 }

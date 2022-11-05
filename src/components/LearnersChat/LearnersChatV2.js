@@ -79,7 +79,6 @@ export default function LearnersChatV2({channel}) {
                         onKeyDown={onEnterSendMessage}
                         className='text-input'
                         type="text"
-                        autoFocus={true}
                         placeholder="Enter your message..."/>
 
                     <button onClick={onClickSend} className='button-input'>Enviar</button>

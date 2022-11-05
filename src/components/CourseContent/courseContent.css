@@ -21,6 +21,10 @@
     
 }
 
+.course-content-child .course-text {
+    margin: 16px 0 24px;
+}
+
 .course-content .course-content-toolbar {
     background-color: #000;
     border-radius: 16px;
