@@ -11,7 +11,7 @@ let prev_channel = "";
 
 
 export default function LearnersChatV2({channel}) {
-    const [ user_id, set_user_id] = useState("");
+    //const [ user_id, set_user_id] = useState("");
     const [ text, setText ] = useState("");
     const [ messagesList, setMessagesList ] = useState([]);
 
@@ -27,9 +27,9 @@ export default function LearnersChatV2({channel}) {
         setMessagesList([...messagesList, data])
     });
 
-    socket.on("id", data => {
+    /*socket.on("id", data => {
         set_user_id(data);
-    })
+    })*/
 
     const onChangeMessageInput = (e) => {
         setText(e.target.value);
@@ -49,7 +49,7 @@ export default function LearnersChatV2({channel}) {
     const onClickSend = () =>{
         if(user_id !== "") {
             const data = {
-                fromID: user_id,
+                fromID: socket.id,
                 text: text,
                 idColor: color,
                 channel: channel
