@@ -32,7 +32,7 @@ export default function CourseContentV2({rootTopicState, setRootTopicState, setR
     }
 
     return (
-        <div className='course-content-container col-6 place-6'>
+        <div className='course-content-container col-6 place-0'>
                 <div className='course-content'>
                     {
                         content? (

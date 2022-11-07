@@ -52,19 +52,12 @@ export default class PostCreator extends Component {
 
     render() {
 
-        let normal = (  <div className="post-creator col-4 place-2">
-                            <div className="post-creator-container">
-                                <img className="profile-thumbnail" src="https://res.cloudinary.com/djlzeapiz/image/upload/c_thumb,w_200,g_face/v1635894309/code.dev/icons/user_profile.png" alt="image profile"/>
-                                <div className="input-shape" onClick={this.onClickPostCreator}>Escribe algo...</div>
-                            </div>
-                        </div>)
-
         return this.state.creating? (
                     <>
                     <ReactNotifications />
                     <div className="post-creator col-4 place-2">
                         <div className='fluid'>
-                            <h3>Creando post</h3> <Close className='icon' onClick={this.onClickClose}/>
+                            <h3>Creando post</h3> <Close onClick={this.onClickClose}/>
                         </div>
                         <div className="post-creator-container">
                         <div>
@@ -78,8 +71,14 @@ export default class PostCreator extends Component {
                     </div>
                     </>
             ) : (
-                normal
+                <div className="post-creator col-4 place-2">
+                    <div className="post-creator-container">
+                        <img className="profile-thumbnail" src="https://res.cloudinary.com/djlzeapiz/image/upload/c_thumb,w_200,g_face/v1635894309/code.dev/icons/user_profile.png" alt="image profile"/>
+                        <div className="input-shape" onClick={this.onClickPostCreator}>Escribe algo...</div>
+                    </div>
+                </div>
             )
+
     }
 
     async populateClientData() {

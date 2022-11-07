@@ -27,7 +27,7 @@ export default function Home() {
 
           <LeftSideBarV2 visibility={leftBarVisibility} setRootTopicState={setTopicState}/>
           <Publication/>
-          <div className="right-section-container col-6 place-3">
+          <div className="right-section-container col-6 place-6">
             <CourseContentV2 rootTopicState={topicState} setRootTopicState={setTopicState} setRootCourseId={setCourseId}/> 
             <LearnersChatV2 channel={courseId}/>
           </div>

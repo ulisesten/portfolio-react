@@ -24,19 +24,15 @@ export default function LearnersChatV2({channel}) {
     }, [channel]);
 
     socket.on("message", data => {
-        setMessagesList([...messagesList, data])
+        setMessagesList([...messagesList, data]);
     });
-
-    /*socket.on("id", data => {
-        set_user_id(data);
-    })*/
 
     const onChangeMessageInput = (e) => {
         setText(e.target.value);
     }
 
     const onIncomingMessage = (data) => {
-        setMessagesList([...messagesList, data])
+        setMessagesList([...messagesList, data]);
         setText("");
     }
 
@@ -47,7 +43,8 @@ export default function LearnersChatV2({channel}) {
     }
 
     const onClickSend = () =>{
-        //if(user_id !== "") {
+        
+        if( text.length > 0){
             const data = {
                 fromID: socket.id,
                 text: text,
@@ -55,13 +52,13 @@ export default function LearnersChatV2({channel}) {
                 channel: channel
             };
 
-            socket.emit("message", data)
-            onIncomingMessage(data)
-        //}
+            socket.emit("message", data);
+            onIncomingMessage(data);
+        } 
     }
 
     return (
-        <div className='learners-chat-container col-6 place-6'>
+        <div className='learners-chat-container col-6 place-0'>
             <div className='learners-chat'>
 
                 <div className='chat-header'>
@@ -82,7 +79,8 @@ export default function LearnersChatV2({channel}) {
                         placeholder="Enter your message..."/>
 
                     <button onClick={onClickSend} className='button-input'>Enviar</button>
-                </div> : <></>}
+                </div> : <></> }
+                
             </div>
 
         </div>
