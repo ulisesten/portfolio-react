@@ -13,7 +13,7 @@
     border: 1px solid #0f0f0f;
     color: aliceblue;
     font-family: 'Nunito', sans-serif;
-    /*white-space: pre;*/
+    white-space: pre-wrap;
 }
 
 .course-content-child {
