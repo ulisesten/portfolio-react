@@ -29,7 +29,7 @@ export default function Home() {
           <Publication/>
           <div className="right-section-container col-6 place-6">
             <CourseContentV2 rootTopicState={topicState} setRootTopicState={setTopicState} setRootCourseId={setCourseId}/> 
-            <LearnersChatV2 channel={courseId}/>
+            <LearnersChatV2 channel={courseId? courseId : "support"}/>
           </div>
         </div>
         
