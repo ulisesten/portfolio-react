@@ -10,6 +10,7 @@ header {
   margin: 0;
   padding: 0.5rem;
   display: inline-flex;
+  z-index: 200;
 }
 
 header .menu-btn {

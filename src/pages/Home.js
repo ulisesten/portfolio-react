@@ -9,14 +9,19 @@ import "../index.css";
 //import LearnersChat from "../components/LearnersChat/LearnersChat";
 import CourseContentV2 from "../components/CourseContent/CourseContentV2";
 import LearnersChatV2 from "../components/LearnersChat/LearnersChatV2";
+import { Redirect } from "react-router-dom/cjs/react-router-dom.min";
 
 let showLeftBar = isMobile ? false : true;
 
-export default function Home() {
+export default function Home({token}) {
   
   const [leftBarVisibility, setLeftBarVisibility] = useState(showLeftBar);
   const [topicState, setTopicState] = useState(null);
   const [courseId, setCourseId] = useState(null);
+
+  if(!token) {
+    return <Redirect to='/login' />
+  }
 
   return (
     <React.StrictMode>
