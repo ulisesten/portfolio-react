@@ -12,18 +12,32 @@
 }
 
 body {
-  background-color: #020202;
+  background-color: #0c0c0c;
 }
 
 .body-container {
   position: relative;
   top: 48px;
+  font-family: 'Nunito', sans-serif;
 }
 
 .right-section-container {
     position: absolute;
     top: 0px;
     box-sizing: border-box;
+}
+
+
+.section-title {
+  padding: 8px 16px;
+  color: #777;
+  margin: 5px 0 8px 5px;
+  border-radius: 32px;
+  border: 2px solid #464545;
+  display: inline-block;
+  mask-image: linear-gradient(270deg, transparent, rgb(8, 8, 8), transparent);
+  -webkit-mask-image: linear-gradient(270deg, transparent, rgb(8, 8, 8), transparent);
+  transition: linear 0.5s ease;
 }
 
 .col-1 {width: 8.33%;}

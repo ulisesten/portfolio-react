@@ -30,7 +30,7 @@ export class Navigation extends Component {
              <header>
                 <this.MenuToggle />
                 <div className="header-container">
-                    <h1 className="header-title">TheCode.DEV</h1>
+                    <h1 className="header-title">Ulises.portfolio()</h1>
                     <this.SearchPanel/>
                     <this.NavContainer />
                 </div>

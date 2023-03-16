@@ -1,0 +1,22 @@
+
+.projects-section-container {
+    position: absolute;
+    color: aliceblue;
+}
+
+
+
+/*.projects-section-container .section-title:hover {
+    mask-image: linear-gradient(90deg, transparent, rgb(8, 8, 8));
+    -webkit-mask-image: linear-gradient(90deg, transparent, rgb(8, 8, 8));
+}*/
+
+
+
+.projects-section-container .projects-section {
+    position: relative;
+    height: auto;
+    border-radius: 8px;
+    color: #fff;
+    display: flex;
+}

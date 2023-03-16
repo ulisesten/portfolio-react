@@ -1,7 +1,7 @@
 import React, { useState} from "react";
 import { Navigation } from "../components/Navigation/Navigation";
 import { useParams } from 'react-router-dom';
-import CourseContent from "../components/CourseContent/CourseContent";
+import CourseContentV2 from "../components/CourseContent/CourseContentV2";
 import LeftSideBarV2 from "../components/LeftSideBar/LeftSidebarV2";
 import { isMobile } from "react-device-detect";
 
@@ -14,6 +14,7 @@ export default function Topic() {
     const { topic } = useParams();
     const [leftBarVisibility, setLeftBarVisibility] = useState(showLeftBar);
     const [topicState, setTopicState] = useState(topic);
+    const [courseId, setCourseId] = useState(null);
 
     return (
         <React.StrictMode>
@@ -21,7 +22,7 @@ export default function Topic() {
                 
                 <Navigation     rootSideBar={leftBarVisibility} setRootSideBar={setLeftBarVisibility} />
                 <LeftSideBarV2  visibility={leftBarVisibility}  setRootTopicState={setTopicState}/>
-                <CourseContent  rootTopicState={topicState}     setRootTopicState={setTopicState}/> 
+                <CourseContentV2  rootTopicState={topicState}     setRootTopicState={setTopicState} setRootCourseId={setCourseId} context="primary"/> 
                 
             </div>
         </React.StrictMode>

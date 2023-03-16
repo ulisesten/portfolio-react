@@ -1,0 +1,83 @@
+
+
+.project-card {
+    position: relative;
+    color: aliceblue;
+    
+    /*font-family: 'Roboto Condensed', sans-serif;*/
+    background-color: #1f1e1e;
+    border-radius: 8px;
+    display: inline-block;
+    margin: 0 5px;
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.project-card__image img {
+    border-radius: 8px 8px 0 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+
+.card-name {
+    padding: 16px 16px 0 16px;
+    color: rgba(201, 199, 199, 0.945);
+}
+
+.card-desc {
+    padding: 16px 16px 32px 16px;
+    color: rgba(168, 167, 167, 0.945);
+}
+
+.card-desc-invisible {
+  padding: 16px 16px 32px 16px;
+  color: rgba(139, 137, 137, 0.815);
+}
+
+
+
+/**Hover effect by Marina Osadcha https://codepen.io/Marina_Os/pen/OJyWPbL*/
+:active, :hover, :focus {
+    outline: 0!important;
+    outline-offset: 0;
+}
+
+::before,
+::after {
+    position: absolute;
+    content: "";
+    border-radius: 8px;
+}
+
+.project-card::before,
+.project-card::after {
+  background: transparent;
+  z-index: 2;
+}
+
+.project-card.hover-border-3::before,
+.project-card.hover-border-3::after {
+  width: 0%; height: 0%;
+  opacity: 0;
+  transition: width 0.2s 0.15s linear, height 0.15s linear, opacity 0s 0.35s;
+}
+
+.project-card.hover-border-3::before {
+  top: 0; right: 0;
+  border-top: 1px solid #19f6e8;
+  border-left: 1px solid #19f6e8;
+}
+
+.project-card.hover-border-3::after {
+  bottom: 0; left: 0;
+  border-bottom: 1px solid #19f6e8;
+  border-right: 1px solid #19f6e8;
+}
+
+.project-card.hover-border-3:hover::before,
+.project-card.hover-border-3:hover::after {
+  width: 100%; height: 99.8%;
+  opacity: 1;
+  transition: width 0.2s linear, height 0.15s 0.2s linear, opacity 0s;   
+}

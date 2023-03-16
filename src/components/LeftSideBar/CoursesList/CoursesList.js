@@ -1,13 +1,21 @@
 import React , {Component} from 'react';
 import { courses_list_url } from '../../../data/urls';
 import {CLineIcon, CplusplusLineIcon, JavaPlainIcon}  from 'react-devicons';
+import "./profile-section.css";
+
+
+const info = {
+    name: "Ulises Martínez Elías",
+    description: "Mi talento más grande es llevar las cosas más allá",
+    image_url: "https://raw.githubusercontent.com/ulisesten/portfolio/main/assets/IMG_20191009_163015%7E2.jpg"
+}
 
 export default class CoursesList extends Component {
     constructor(props){
         super(props)
 
         this.state = {
-            languages: [],
+            info: {},
             loading: true,
         }
 
@@ -18,13 +26,13 @@ export default class CoursesList extends Component {
     }
 
     async populateLanguageData() {
-        this.setState({ loading: true });
+        /*this.setState({ loading: true });
 
         const url = courses_list_url;
         const response = await fetch(url);
-        const data = await response.json();
+        const data = await response.json();*/
 
-        this.setState({ languages: data.result, loading: false });
+        this.setState({ info: info, loading: false });
     }
 
     onClickCourse = (e)=>{
@@ -44,7 +52,6 @@ export default class CoursesList extends Component {
 
         return (
             <div>
-                <h4><span className="list-header">Cursos</span></h4>
                 {this.state.loading?<div className='list-container load-6'>
                                         <div className="letter-holder">
                                             <div className="l-1 letter">L</div>
@@ -60,19 +67,24 @@ export default class CoursesList extends Component {
                                         </div>
                                     </div>
                                     : 
-                                    <div className='list-container'>
-                                        {this.state.languages.map(
-                                            (lang) => (
-                                                <div key={lang.id}
-                                                    id={lang.id}
-                                                    onClick={this.onClickCourse}
-                                                    className="list-element">
-                                                        {this.getIcon(lang.lang)}
-                                                        {lang.name}
+                                    
+                                        <div className='card--container'>
+                                            <div className='image--wrapper'>
+                                                <div className='profile--image__container'>
+                                                    <img className='profile--image' src={this.state.info.image_url}/>
                                                 </div>
-                                            )
-                                        )}
-                                </div>}
+                                            </div>
+                                            <div className='card--wrapper'>
+                                                <div className='card--info'>
+
+                                                    <div className='card--info__name'>{this.state.info.name}</div>
+
+                                                    <div className='card--info__description'>{this.state.info.description}</div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                }
             </div>
         )
     }

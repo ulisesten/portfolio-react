@@ -38,6 +38,7 @@ export default class LeftSideBarV2 extends Component {
         
         return this.props.visibility? (
             <div className="sidebar-container place-0 col-2">
+                <div><h3 className="section-title">Sobre mí</h3></div>
                 <div className="sidebar">
                     {contentToShow}
                 </div>

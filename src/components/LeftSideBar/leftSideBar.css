@@ -6,21 +6,13 @@
 }
 
 .sidebar {
-    background-color: rgba(2, 2, 2, 0.85);
-    /*background-color: #8b5555;*/
-    margin: 8px 8px 8px 0;
-    padding: 8px;
+    /*background-color: rgba(2, 2, 2, 0.85);
+    background-color: #8b5555;*/
+    padding: 0 8px;
     color: white;
     border-radius: 8px;
     font-family: 'Nunito', sans-serif;
     height: 100%;
-}
-
-.sidebar .list-header {
-    background-color: #2b2a2a;
-    padding: 8px;
-    border-radius: 16px;
-    cursor: pointer;
 }
 
 .sidebar .syllabus-header {
@@ -29,6 +21,8 @@
     border-radius: 0 16px 16px 0;
     border-left: 1px solid #646363;
 }
+
+
 
 .sidebar .syllabus-header-start {
     background-color: #2b2a2a;
